@@ -1,13 +1,13 @@
 class EmailParser
   
-  attr_accessor :string
+  attr_accessor :emails
   
-  def initialize(string)
-    @string = string
+  def initialize(emails)
+    @emails = emails
   end
   
   def parse
-    @string.gsub(","," ").split(" ").uniq
+    @emails.split(/[, ]+/).uniq
   end
   
 end
